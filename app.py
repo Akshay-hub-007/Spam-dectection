@@ -1,6 +1,8 @@
 # app.py
 import streamlit as st
 from main import predict_spam
+import nltk
+nltk.download('punkt')
 
 st.set_page_config(page_title="Spam Detector", page_icon="📧")
 
