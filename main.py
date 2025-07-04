@@ -46,8 +46,10 @@ from nltk.tokenize import word_tokenize
 
 # Download once
 nltk.download('stopwords')
-nltk.download('punkt')
-
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 # Load model and vectorizer
 with open("spam_model.pkl", "rb") as f:
     model = pickle.load(f)
